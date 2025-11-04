@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game - Professional Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Modern, professional Snake game with smooth controls and beautiful design">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Game Header -->
+        <header class="game-header">
+            <h1 class="game-title">Snake Game</h1>
+            <p class="game-subtitle">Classic arcade game reimagined</p>
+            
+            <!-- Score Display -->
+            <div class="score-container">
+                <div class="score-card">
+                    <div class="score-label">Current Score</div>
+                    <div class="score-value" id="score">0</div>
+                </div>
+                <div class="score-card">
+                    <div class="score-label">Best Score</div>
+                    <div class="score-value" id="high-score">0</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Game Board -->
+        <main class="game-board">
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+        </main>
+
+        <!-- Control Panel -->
+        <section class="control-panel">
+            <div class="game-controls">
+                <!-- Game Action Controls -->
+                <div class="control-section">
+                    <h3 class="section-title">Game Controls</h3>
+                    <div class="btn-group">
+                        <button id="startBtn" class="btn btn-success">Start Game</button>
+                        <button id="pauseBtn" class="btn btn-secondary">Pause</button>
+                        <button id="resetBtn" class="btn btn-secondary">Reset</button>
+                    </div>
+                </div>
+
+                <!-- Difficulty Controls -->
+                <div class="control-section">
+                    <div class="difficulty-display">
+                        <div class="difficulty-label">Current Difficulty</div>
+                        <div class="difficulty-value" id="difficultyDisplay">Medium</div>
+                    </div>
+                    <div class="difficulty-selector">
+                        <button id="easyBtn" class="difficulty-btn" data-difficulty="easy">Easy</button>
+                        <button id="mediumBtn" class="difficulty-btn active" data-difficulty="medium">Medium</button>
+                        <button id="hardBtn" class="difficulty-btn" data-difficulty="hard">Hard</button>
+                    </div>
+                </div>
+
+                <!-- Instructions -->
+                <div class="control-section">
+                    <h3 class="section-title">How to Play</h3>
+                    <div class="instructions">
+                        <p>🎮 Use arrow keys or WASD to control the snake</p>
+                        <p>⏸️ Press SPACE to pause/resume the game</p>
+                        <p>🍎 Eat food to grow and increase your score</p>
+                        <p>⚠️ Avoid hitting walls or your own tail</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mobile Touch Controls -->
+        <section class="mobile-controls">
+            <h3 class="touch-controls-title">Touch Controls</h3>
+            <div class="touch-pad">
+                <button id="upBtn" class="control-btn up" aria-label="Move Up">↑</button>
+                <div class="middle-row">
+                    <button id="leftBtn" class="control-btn left" aria-label="Move Left">←</button>
+                    <button id="downBtn" class="control-btn down" aria-label="Move Down">↓</button>
+                    <button id="rightBtn" class="control-btn right" aria-label="Move Right">→</button>
+                </div>
+            </div>
+            <p class="swipe-hint">💡 You can also swipe on the game area!</p>
+        </section>
+
+        <!-- Game Over Modal -->
+        <div id="gameOver" class="game-over hidden">
+            <div class="game-over-content">
+                <h2>🎮 Game Over!</h2>
+                <p>Your final score: <strong id="finalScore">0</strong></p>
+                <button id="restartBtn" class="btn btn-success">Play Again</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
